@@ -1,0 +1,33 @@
+---
+title: "Week 2 Project"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Overview
+
+Here are the Windsor University, Western University, Brock University, McMaster University, Waterloo University in Ontario, Canada.
+
+```{r}
+# loading packages
+library(leaflet)
+library(dplyr)
+```
+
+
+```{r}
+univ <- leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lat=42.3040, lng=-83.0595, popup="Windsor University") %>%
+  addMarkers(lat=43.009953,lng=-81.273613, popup="Western University") %>%
+  addMarkers(lat=43.1190,lng=-79.2490, popup="Brock University") %>%
+  addMarkers(lat=43.2580,lng=-79.9180, popup="McMaster University") %>%
+  addMarkers(lat=43.4723,lng=-80.5449, popup="Waterloo University")
+univ
+```
+
+
+
